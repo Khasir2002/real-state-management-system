@@ -1,17 +1,16 @@
 import React from 'react';
 
-
-import Header from '../components/Header';
 import Banner from '../components/Banner';
 import HouseList from '../components/HouseList';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-  <div className='min-h-[1800px]'>
-      <Header />
+    <div style={{ minHeight: '1800px' }}>
       <Banner />
       <HouseList />
-  </div>
+      <Footer />
+    </div>
   );
 };
 

@@ -1,29 +1,29 @@
-import {React ,useContext} from 'react';
+import React, { useContext } from 'react';
 import CountryDropdown from './CountryDropdown';
 import PropertyDropdown from './PropertyDropdown';
 import PriceRangeDropdown from './PriceRangeDropdown';
-import {HouseContext} from './HouseContext';
-
-import {RiSearch2Line} from 'react-icons/ri';
-
+import { HouseContext } from './HouseContext';
+import { RiSearch2Line } from 'react-icons/ri';
 
 const Search = () => {
-  const {handleClick} = useContext(HouseContext);
+  const { handleClick } = useContext(HouseContext);
+
   return (
-   <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row 
-   justify-between gap-4 lg:gap-x-3 relative lg:top-4 lg:shadow-1 bg-white lg:bg-transparent
-   lg:backdrop-blur rounded-lg'>
-    <CountryDropdown />
-    <PropertyDropdown />
-    <PriceRangeDropdown />
-    <button
-     onClick={() => handleClick()} 
-     className='bg-blue-700 hover:bg-blue-800 transition w-full max-w-[162px]
-    h-16 rounded-lg flex justify-center items-center text-white text-lg'>
-      <RiSearch2Line />
-    </button>
-    
-   </div>
+    <div
+      className="px-5 py-4 mx-auto d-flex flex-column flex-lg-row justify-content-between gap-3 shadow-lg bg-white rounded"
+      style={{ maxWidth: '1210px', position: 'relative', top: '4px' }}
+    >
+      <CountryDropdown />
+      <PropertyDropdown />
+      <PriceRangeDropdown />
+      <button
+        onClick={() => handleClick()}
+        className="btn btn-primary d-flex justify-content-center align-items-center w-100 w-lg-auto"
+        style={{ maxWidth: '162px', height: '64px' }}
+      >
+        <RiSearch2Line />
+      </button>
+    </div>
   );
 };
 

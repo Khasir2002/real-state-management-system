@@ -1,63 +1,69 @@
-import React ,{useState, useContext} from 'react';
-import {RiWallet3Line,RiArrowDownSLine,RiArrowUpSLine} from 'react-icons/ri';
-import { Menu } from '@headlessui/react';
-import {HouseContext} from './HouseContext';
+import React, { useState, useContext } from 'react';
+import { RiWallet3Line, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { Dropdown } from 'react-bootstrap';
+import { HouseContext } from './HouseContext';
 
 const PriceRangeDropdown = () => {
-  const {price, setPrice} = useContext(HouseContext);
+  const { price, setPrice } = useContext(HouseContext);
   const [isOpen, setIsOpen] = useState(false);
-  const prices = [
-    {
-      value: 'Price range (any)',
-    },
-    {
-      value: '100000 - 130000',
-    },
-    {
-      value: ' 130000 - 160000',
-    },
-    {
-      value: '160000 - 190000',
-    },
-    {
-      value: '190000 - 220000',
-    },
-    {
-      value: '10000 - 30000',
-    },
-    {
-      value: '30000 - 40000',
-    },
-  ]
-  return (
-   <Menu as='div' className='dropdown relative'>
-    <Menu.Button className='dropdown-button w-full text-left' onClick={() => setIsOpen(!isOpen)}>
-      <RiWallet3Line className='dropdown-icon-primary' />
-      <div>
-        <div className='text-[15px] font-medium leading-tight'>{price}</div>
-        <div className='text-[13px] font-medium'>Choose price range</div>
-      </div>
-      {isOpen ? (<RiArrowUpSLine className='dropdown-icon-secondary' />
-      ): (
-      <RiArrowDownSLine className='dropdown-icon-secondary' />
-    )}
-    </Menu.Button>
 
-    <Menu.Items className='dropdown-menu'>
-      {prices.map((price, index) => {
-        return (
-          <Menu.Item 
-          onClick={() => setPrice(price.value)}
-          className='cursor-pointer hover:text-blue-700 transition'
-          as ='li'
-          key={index}
+  const prices = [
+    { value: 'Price range (any)' },
+    { value: '1000000 - 13000000' },
+    { value: '13000000 - 16000000' },
+    { value: '16000000 - 19000000' },
+    { value: '19000000 - 22000000' },
+    { value: '100000 - 300000' },
+    { value: '300000 - 400000' },
+  ];
+
+  return (
+    <Dropdown
+      className="dropdown"
+      onToggle={() => setIsOpen(!isOpen)}
+    >
+      <Dropdown.Toggle
+        className="w-100 text-start d-flex align-items-center justify-content-between"
+        id="dropdown-basic"
+        style={{
+          backgroundColor: 'transparent',
+          border: '1px solid #E5E5E5',
+          borderRadius: '8px',
+          padding: '10px 12px',
+        }}
+      >
+        <div className="d-flex align-items-center flex-grow-1">
+          <RiWallet3Line className="me-4" style={{ color: 'blue', fontSize: '20px' }} />
+          <div>
+            <div className="fs-6 fw-medium" style={{ color: 'black' }}>
+              {price || 'Price range (any)'}
+            </div>
+            <div className="fs-7 text-muted">Choose price range</div>
+          </div>
+        </div>
+        <div className="d-flex align-items-center justify-content-end">
+          {isOpen ? (
+            <RiArrowUpSLine style={{ color: 'blue', fontSize: '20px' }} />
+          ) : (
+            <RiArrowDownSLine style={{ color: 'blue', fontSize: '20px' }} />
+          )}
+        </div>
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className="w-100">
+        {prices.map((price, index) => (
+          <Dropdown.Item
+            as="li"
+            key={index}
+            onClick={() => setPrice(price.value)}
+            className="cursor-pointer hover-link"
+            style={{ padding: '8px 12px' }}
           >
-          {price.value}
-          </Menu.Item>
-        );
-      })}
-    </Menu.Items>
-  </Menu>
+            {price.value}
+          </Dropdown.Item>
+        ))}
+      </Dropdown.Menu>
+    </Dropdown>
   );
 };
 

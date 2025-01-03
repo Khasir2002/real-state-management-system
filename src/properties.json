@@ -1,0 +1,284 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "type": "House",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "surface": "3500 sq ft",
+      "price": 25000000,
+      "tenure": "Freehold",
+      "description": "A luxurious 5-bedroom house located in the serene area of Nugegoda, Colombo. This exquisite property boasts modern architecture, a beautifully landscaped garden, and spacious interiors designed for comfortable family living. With ample parking space, high-quality finishes, and a tranquil environment, this home is perfect for families seeking elegance and convenience in a prime location. Close to schools, shopping centers, and essential amenities, this house combines luxury with practicality.",
+      "address": "No. 12, Temple Road, Nugegoda, Colombo",
+      "country": "Sri Lanka",
+      "picture": "images/houses/house1.png",
+      "images": [
+        "/images/houses/house1lg.png",
+        "/images/houses/house2lg.png",
+        "/images/houses/house3lg.png",
+        "/images/houses/house4lg.png"
+      ],
+      "url": "properties/house1.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent1.png",
+        "name": "Lahiru Perera",
+        "phone": "+94 77 123 4567"
+      },
+      "general": {
+        "utilities": "Renter is responsible",
+        "petPolicy": "Pets Allowed",
+        "propertyFees": "Must have 3x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "200m away",
+        "busStop": "100m away",
+        "restaurant": "300m away"
+      }
+    },
+    {
+      "id": 2,
+      "type": "Apartment",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "surface": "1500 sq ft",
+      "price": 18000000,
+      "tenure": "Freehold",
+      "description": "A modern 3-bedroom apartment in Dehiwala, Colombo, offering a perfect blend of convenience and style. This spacious apartment features a well-equipped gym, a swimming pool for relaxation, and 24/7 security for peace of mind. With its proximity to key urban locations and amenities, this property is ideal for individuals or families looking for a secure and comfortable urban living experience. The interior design emphasizes open spaces, modern finishes, and a welcoming atmosphere, making it a highly desirable choice.",
+      "address": "No. 45, Marine Drive, Dehiwala, Colombo",
+      "country": "Sri Lanka",
+      "picture": "images/apartments/a1.png",
+      "images": [
+        "/images/apartments/a1lg.png",
+        "/images/apartments/a2lg.png",
+        "/images/apartments/a3lg.png",
+        "/images/apartments/a4lg.png"
+      ],
+      "url": "properties/apartment1.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent2.png",
+        "name": "Kavindi Silva",
+        "phone": "+94 77 987 6543"
+      },
+      "general": {
+        "utilities": "Utilities included",
+        "petPolicy": "No Pets Allowed",
+        "propertyFees": "Must have 2x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "150m away",
+        "busStop": "50m away",
+        "restaurant": "100m away"
+      }
+    },
+    {
+      "id": 3,
+      "type": "House",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "surface": "3200 sq ft",
+      "price": 20000000,
+      "tenure": "Freehold",
+      "description": "A charming 4-bedroom house in Kandy offering breathtaking hill views and a tranquil setting. This property features a large garden, spacious living areas, and a modern kitchen, making it an excellent choice for those seeking a serene lifestyle close to nature. The house is designed with functionality and style in mind, ensuring comfort for families or individuals. Conveniently located near schools, shops, and cultural landmarks, this home provides the perfect blend of privacy and accessibility in the heart of Kandy.",
+      "address": "No. 23, Upper Lake Road, Kandy",
+      "country": "Sri Lanka",
+      "picture": "images/houses/house2.png",
+      "images": [
+        "/images/houses/house4lg.png",
+        "/images/houses/house5lg.png",
+        "/images/houses/house6lg.png",
+        "/images/houses/house7lg.png"
+      ],
+      "url": "properties/house2.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent3.png",
+        "name": "Prasad Jayawardena",
+        "phone": "+94 71 234 5678"
+      },
+      "general": {
+        "utilities": "Renter is responsible",
+        "petPolicy": "Pets Allowed",
+        "propertyFees": "Must have 3x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "300m away",
+        "busStop": "200m away",
+        "restaurant": "400m away"
+      }
+    },
+    {
+      "id": 4,
+      "type": "House",
+      "bedrooms": 6,
+      "bathrooms": 5,
+      "surface": "4000 sq ft",
+      "price": 30000000,
+      "tenure": "Freehold",
+      "description": "A stunning 6-bedroom villa in Galle that combines luxury and scenic views. Situated near the beach, this property offers a unique lifestyle with spacious interiors, high-end finishes, and ample outdoor space for leisure activities. The villa is perfect for vacation living or as a private retreat, boasting modern amenities and an unbeatable location. With close proximity to cultural landmarks, shopping, and dining options, this property offers the perfect balance of relaxation and convenience.",
+      "address": "No. 12, Beach Road, Galle",
+      "country": "Sri Lanka",
+      "picture": "images/houses/house3.png",
+      "images": [
+        "/images/houses/house7lg.png",
+        "/images/houses/house8lg.png",
+        "/images/houses/house9lg.png",
+        "/images/houses/house10lg.png"
+      ],
+      "url": "properties/house3.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent4.png",
+        "name": "Samantha Perera",
+        "phone": "+94 77 876 5432"
+      },
+      "general": {
+        "utilities": "Tenant pays for water and electricity",
+        "petPolicy": "Pets Allowed",
+        "propertyFees": "Must have 2x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "250m away",
+        "busStop": "150m away",
+        "restaurant": "200m away"
+      }
+    },
+    {
+      "id": 5,
+      "type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "surface": "900 sq ft",
+      "price": 12000000,
+      "tenure": "Freehold",
+      "description": "A cozy 2-bedroom apartment in Colombo 3, perfect for young professionals or small families. This property features a modern kitchen, open-plan living areas, and secure parking. Located in a vibrant neighborhood with easy access to shops, restaurants, and public transport, this apartment offers both comfort and convenience. The stylish design and efficient layout make it a practical and desirable living space in the heart of Colombo.",
+      "address": "No. 45, Park Lane, Colombo 3",
+      "country": "Sri Lanka",
+      "picture": "images/apartments/a2.png",
+      "images": [
+        "/images/apartments/a4lg.png",
+        "/images/apartments/a5lg.png",
+        "/images/apartments/a6lg.png",
+        "/images/apartments/a3lg.png"
+      ],
+      "url": "properties/apartment2.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent5.png",
+        "name": "Nuwan Dias",
+        "phone": "+94 76 543 2121"
+      },
+      "general": {
+        "utilities": "Utilities included",
+        "petPolicy": "No Pets Allowed",
+        "propertyFees": "Must have 2x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "100m away",
+        "busStop": "50m away",
+        "restaurant": "150m away"
+      }
+    },
+    {
+      "id": 6,
+      "type": "House",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "surface": "2500 sq ft",
+      "price": 15000000,
+      "tenure": "Freehold",
+      "description": "A quaint 3-bedroom house in Negombo, located near the picturesque lagoon. This property offers a peaceful retreat with its spacious interiors and beautiful surroundings. Ideal for families seeking a quiet neighborhood, the house is close to schools, local markets, and recreational areas. With a focus on comfort and functionality, this home provides a perfect balance of lifestyle and accessibility.",
+      "address": "No. 8, Lagoon View Road, Negombo",
+      "country": "Sri Lanka",
+      "picture": "images/houses/house4.png",
+      "images": [
+        "/images/houses/house10lg.png",
+        "/images/houses/house11lg.png",
+        "/images/houses/house12lg.png",
+        "/images/houses/house8lg.png"
+      ],
+      "url": "properties/house4.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent6.png",
+        "name": "Kamal Wickramasinghe",
+        "phone": "+94 75 432 1212"
+      },
+      "general": {
+        "utilities": "Tenant pays for electricity",
+        "petPolicy": "Pets Allowed",
+        "propertyFees": "Must have 3x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "200m away",
+        "busStop": "150m away",
+        "restaurant": "250m away"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Apartment",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "surface": "1800 sq ft",
+      "price": 22000000,
+      "tenure": "Freehold",
+      "description": "A spacious 4-bedroom apartment in Rajagiriya with breathtaking city views. This property offers modern amenities such as a gym, swimming pool, and 24/7 security. Designed for urban living, the apartment features an open-plan layout, high-quality finishes, and ample natural light. Located in a prime area with easy access to schools, shopping centers, and public transport, this apartment is a perfect choice for those seeking a contemporary lifestyle in a convenient location.",
+      "address": "No. 55, Urban Towers, Rajagiriya",
+      "country": "Sri Lanka",
+      "picture": "images/apartments/a3.png",
+      "images": [
+        "/images/apartments/a5lg.png",
+        "/images/apartments/a2lg.png",
+        "/images/apartments/a1lg.png",
+        "/images/apartments/alg.png"
+      ],
+      "url": "properties/apartment3.html",
+      "added": {
+        "month": "January",
+        "day": 3,
+        "year": 2025
+      },
+      "agent": {
+        "image": "/images/agents/agent7.png",
+        "name": "Hiruni Fernando",
+        "phone": "+94 78 123 4567"
+      },
+      "general": {
+        "utilities": "Utilities included",
+        "petPolicy": "No Pets Allowed",
+        "propertyFees": "Must have 3x the rent in income"
+      },
+      "nearbyPlaces": {
+        "school": "50m away",
+        "busStop": "100m away",
+        "restaurant": "150m away"
+      }
+    }
+  ]
+}

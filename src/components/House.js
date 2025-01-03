@@ -1,40 +1,56 @@
-import React from 'react';
+import React from "react";
+import { BiBed, BiBath, BiArea } from "react-icons/bi";
 
-import{BiBed, BiBath, BiArea} from 'react-icons/bi';
+const House = ({ house }) => {
+  const {
+    picture,
+    type,
+    country,
+    address,
+    bedrooms,
+    bathrooms,
+    surface,
+    price,
+  } = house;
 
-const House = ({house}) => {
-  const {image,type,country,address,bedrooms,bathrooms,surface,price} = house;
+
   return (
-   <div className='bg-white rounded-lg shadow-1 p-5 rounded-tl-[90px]
-    w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition'>
-    <img  className='mb-8' src={image} alt={house.name} />
-    <div className='mb-4 flex gap-x-2 text-sm'>
-    <div className='bg-green-500 rounded-full text-white px-3'>{type}</div>
-    <div className='bg-blue-500 rounded-full text-white px-3'>{country}</div>
-    </div>
-    <div className='text-lg font-semibold max-w-[260px]'>{address}</div>
-    <div className='flex gap-x-4 my-4'>
-      <div className='flex items-center gap-1 text-gray-600'>
-        <div className='text-[20px] '>
-          <BiBed/>
+    <div
+      className="bg-white rounded shadow-sm p-4 position-relative mx-auto hover-shadow transition"
+      style={{ maxWidth: "352px", cursor: "pointer" }}
+    >
+      <img className="mb-3 img-fluid rounded" src={picture} alt={house.name} />
+      <div className="mb-3 d-flex gap-2 text-muted small">
+        <div className="badge bg-success text-white">{type}</div>
+        <div className="badge bg-primary text-white">{country}</div>
+      </div>
+      <div className="fw-semibold text-truncate" style={{ maxWidth: "260px" }}>
+        {address}
+      </div>
+      <div className="d-flex gap-3 my-3">
+        <div className="d-flex align-items-center gap-1 text-secondary">
+          <div className="fs-5">
+            <BiBed />
           </div>
           <div>{bedrooms}</div>
-      </div>
-      <div className='flex items-center gap-1 text-gray-600'>
-        <div className='text-[20px] '>
-          <BiBath/>
+        </div>
+        <div className="d-flex align-items-center gap-1 text-secondary">
+          <div className="fs-5">
+            <BiBath />
           </div>
           <div>{bathrooms}</div>
-      </div>
-      <div className='flex items-center gap-1 text-gray-600'>
-        <div className='text-[20px] '>
-          <BiArea/>
+        </div>
+        <div className="d-flex align-items-center gap-1 text-secondary">
+          <div className="fs-5">
+            <BiArea />
           </div>
           <div>{surface}</div>
+        </div>
+      </div>
+      <div className="d-flex justify-content-between align-items-center">
+        <div className="fw-semibold text-primary">Rs.{price}</div>
       </div>
     </div>
-    <div className='text-lg font-semibold text-blue-600 mb-4'>{price}</div>
-   </div>
   );
 };
 

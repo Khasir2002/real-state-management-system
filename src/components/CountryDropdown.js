@@ -1,40 +1,59 @@
-import React ,{useState, useContext} from 'react';
-import {RiMapPinLine,RiArrowDownSLine,RiArrowUpSLine} from 'react-icons/ri';
-import { Menu } from '@headlessui/react';
-import {HouseContext} from './HouseContext';
+import React, { useState, useContext } from 'react';
+import { RiMapPinLine, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { Dropdown } from 'react-bootstrap';
+import { HouseContext } from './HouseContext';
 
 const CountryDropdown = () => {
-  const {country, setCountry, countries, setCountries} = useContext(HouseContext);
+  const { country, setCountry, countries } = useContext(HouseContext);
   const [isOpen, setIsOpen] = useState(false);
-  return (
-   <Menu as='div' className='dropdown relative'>
-    <Menu.Button className='dropdown-button w-full text-left' onClick={() => setIsOpen(!isOpen)}>
-      <RiMapPinLine className='dropdown-icon-primary' />
-      <div>
-        <div className='text-[15px] font-medium leading-tight'>{country}</div>
-        <div className='text-[13px] font-medium'>Select your place</div>
-      </div>
-      {isOpen ? (<RiArrowUpSLine className='dropdown-icon-secondary' />
-      ): (
-      <RiArrowDownSLine className='dropdown-icon-secondary' />
-    )}
-    </Menu.Button>
 
-    <Menu.Items className='dropdown-menu'>
-      {countries.map((country, index) => {
-        return (
-          <Menu.Item 
-          onClick={() => setCountry(country)}
-          className='cursor-pointer hover:text-blue-700 transition'
-          as ='li'
-          key={index}
+  return (
+    <Dropdown
+      className="dropdown"
+      onToggle={() => setIsOpen(!isOpen)}
+    >
+      <Dropdown.Toggle
+        className="w-100 text-start d-flex align-items-center justify-content-between"
+        id="dropdown-basic"
+        style={{
+          backgroundColor: 'transparent',
+          border: '1px solid #E5E5E5',
+          borderRadius: '8px',
+          padding: '10px 12px',
+        }}
+      >
+        <div className="d-flex align-items-center flex-grow-1">
+          <RiMapPinLine className="me-4" style={{ color: 'blue', fontSize: '20px' }} />
+          <div>
+            <div className="fs-6 fw-medium" style={{ color: 'black' }}>
+              {country || 'Country (any)'}
+            </div>
+            <div className="fs-7 text-muted">Select your place</div>
+          </div>
+        </div>
+        <div className="d-flex align-items-center justify-content-end">
+          {isOpen ? (
+            <RiArrowUpSLine style={{ color: 'blue', fontSize: '20px' }} />
+          ) : (
+            <RiArrowDownSLine style={{ color: 'blue', fontSize: '20px' }} />
+          )}
+        </div>
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className="w-100">
+        {countries.map((country, index) => (
+          <Dropdown.Item
+            as="li"
+            key={index}
+            onClick={() => setCountry(country)}
+            className="cursor-pointer hover-link"
+            style={{ padding: '8px 12px' }}
           >
-          {country}
-          </Menu.Item>
-        );
-      })}
-    </Menu.Items>
-  </Menu>
+            {country}
+          </Dropdown.Item>
+        ))}
+      </Dropdown.Menu>
+    </Dropdown>
   );
 };
 

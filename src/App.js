@@ -1,20 +1,42 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-import Home from './pages/Home';
-import PropertyDetails from './pages/PropertyDetails';
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import PropertyDetails from "./pages/PropertyDetails";
+import Profile from "../src/components/Profile";
+import Header from "./components/Header";
 
 const App = () => {
+  const [savedItems, setSavedItems] = useState([]);
+  const [messages, setMessages] = useState([]);
+
+  const handleSavePlace = (property) => {
+    setSavedItems((prevSavedItems) => [...prevSavedItems, property]);
+  };
+
+  const handleSendMessage = (message) => {
+    setMessages((prevMessages) => [...prevMessages, message]);
+  };
+
   return (
-  <div className='max-w-[1440px] mx-auto bg-white'>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/property/:id" element={<PropertyDetails />} />
-    </Routes>
-    <Footer />
-  </div>
+    <div className="container bg-white">
+      <Header savedCount={savedItems.length} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/property/:id"
+          element={
+            <PropertyDetails
+              onSavePlace={handleSavePlace}
+              onSendMessage={handleSendMessage}
+            />
+          }
+        />
+        <Route
+          path="/profile"
+          element={<Profile savedItems={savedItems} messages={messages} />}
+        />
+      </Routes>
+    </div>
   );
 };
 
