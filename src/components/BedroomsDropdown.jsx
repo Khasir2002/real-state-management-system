@@ -28,7 +28,7 @@ const BedroomsDropdown = () => {
             <div className="fs-6 fw-medium" style={{ color: "black" }}>
               {bedrooms || "Bedrooms (any)"}
             </div>
-            <div className="fs-7 text-muted">Select your No.of Bedrooms</div>
+            <div className="fs-7 text-muted">Select No. Beds</div>
           </div>
         </div>
         <div className="d-flex align-items-center justify-content-end">

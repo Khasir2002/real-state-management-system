@@ -42,3 +42,40 @@ body {
   list-style: none;
   border-radius: 0 0 0.5rem 0.5rem;
 }
+@media (max-width: 768px) {
+  .dropdown {
+    max-width: 100%;
+  }
+
+  .dropdown-button {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .dropdown-icon-primary,
+  .dropdown-icon-secondary {
+    font-size: 1.25rem;
+  }
+
+  .dropdown-menu {
+    padding: 0.75rem 1rem;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-button {
+    height: 48px;
+    padding: 0 8px;
+  }
+
+  .dropdown-icon-primary,
+  .dropdown-icon-secondary {
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    padding: 0.5rem 0.75rem;
+    font-size: 13px;
+  }
+}

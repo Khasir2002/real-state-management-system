@@ -10,6 +10,10 @@
       "tenure": "Freehold",
       "description": "A luxurious 5-bedroom house located in the serene area of Nugegoda, Colombo. This exquisite property boasts modern architecture, a beautifully landscaped garden, and spacious interiors designed for comfortable family living. With ample parking space, high-quality finishes, and a tranquil environment, this home is perfect for families seeking elegance and convenience in a prime location. Close to schools, shopping centers, and essential amenities, this house combines luxury with practicality.",
       "address": "No. 12, Temple Road, Nugegoda, Colombo",
+      "geoLocation": {
+        "latitude": 6.8613,
+        "longitude": 79.8997
+      },
       "district": {
         "name": "Colombo",
         "postalCode": "10250"
@@ -53,6 +57,10 @@
       "tenure": "Freehold",
       "description": "A modern 3-bedroom apartment in Dehiwala, Colombo, offering a perfect blend of convenience and style. This spacious apartment features a well-equipped gym, a swimming pool for relaxation, and 24/7 security for peace of mind. With its proximity to key urban locations and amenities, this property is ideal for individuals or families looking for a secure and comfortable urban living experience. The interior design emphasizes open spaces, modern finishes, and a welcoming atmosphere, making it a highly desirable choice.",
       "address": "No. 45, Marine Drive, Dehiwala, Colombo",
+      "geoLocation": {
+        "latitude": 6.8402,
+        "longitude": 79.8712
+      },
       "district": {
         "name": "Colombo",
         "postalCode": "10250"
@@ -96,6 +104,10 @@
       "tenure": "Freehold",
       "description": "A charming 4-bedroom house in Kandy offering breathtaking hill views and a tranquil setting. This property features a large garden, spacious living areas, and a modern kitchen, making it an excellent choice for those seeking a serene lifestyle close to nature. The house is designed with functionality and style in mind, ensuring comfort for families or individuals. Conveniently located near schools, shops, and cultural landmarks, this home provides the perfect blend of privacy and accessibility in the heart of Kandy.",
       "address": "No. 23, Upper Lake Road, Kandy",
+      "geoLocation": {
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
       "district": {
         "name": "Kandy",
         "postalCode": "20000"
@@ -139,6 +151,10 @@
       "tenure": "Freehold",
       "description": "A stunning 6-bedroom villa in Galle that combines luxury and scenic views. Situated near the beach, this property offers a unique lifestyle with spacious interiors, high-end finishes, and ample outdoor space for leisure activities. The villa is perfect for vacation living or as a private retreat, boasting modern amenities and an unbeatable location. With close proximity to cultural landmarks, shopping, and dining options, this property offers the perfect balance of relaxation and convenience.",
       "address": "No. 12, Beach Road, Galle",
+      "geoLocation": {
+        "latitude": 6.0535,
+        "longitude": 80.2209
+      },
       "district": {
         "name": "Galle",
         "postalCode": "80000"
@@ -182,6 +198,10 @@
       "tenure": "Freehold",
       "description": "A cozy 2-bedroom apartment in Colombo 3, perfect for young professionals or small families. This property features a modern kitchen, open-plan living areas, and secure parking. Located in a vibrant neighborhood with easy access to shops, restaurants, and public transport, this apartment offers both comfort and convenience. The stylish design and efficient layout make it a practical and desirable living space in the heart of Colombo.",
       "address": "No. 45, Park Lane, Colombo 3",
+      "geoLocation": {
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
       "district": {
         "name": "Colombo",
         "postalCode": "10250"
@@ -225,6 +245,10 @@
       "tenure": "Freehold",
       "description": "A quaint 3-bedroom house in Negombo, located near the picturesque lagoon. This property offers a peaceful retreat with its spacious interiors and beautiful surroundings. Ideal for families seeking a quiet neighborhood, the house is close to schools, local markets, and recreational areas. With a focus on comfort and functionality, this home provides a perfect balance of lifestyle and accessibility.",
       "address": "No. 8, Lagoon View Road, Negombo",
+      "geoLocation": {
+        "latitude": 7.2083,
+        "longitude": 79.8737
+      },
       "district": {
         "name": "Negombo",
         "postalCode": "11500"
@@ -268,6 +292,10 @@
       "tenure": "Freehold",
       "description": "A spacious 4-bedroom apartment in Rajagiriya with breathtaking city views. This property offers modern amenities such as a gym, swimming pool, and 24/7 security. Designed for urban living, the apartment features an open-plan layout, high-quality finishes, and ample natural light. Located in a prime area with easy access to schools, shopping centers, and public transport, this apartment is a perfect choice for those seeking a contemporary lifestyle in a convenient location.",
       "address": "No. 55, Urban Towers, Rathnapura",
+      "geoLocation": {
+        "latitude": 6.6828,
+        "longitude": 80.3992
+      },
       "district": {
         "name": "Rathnapura",
         "postalCode": "10107"
