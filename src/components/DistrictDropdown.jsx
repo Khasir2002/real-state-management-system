@@ -4,7 +4,9 @@ import { Dropdown } from "react-bootstrap";
 import { HouseContext } from "./HouseContext";
 
 const DistrictDropdown = () => {
+  // Get district info and helper functions from context
   const { district, setDistrict, districts } = useContext(HouseContext);
+  // Check if dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -44,7 +46,7 @@ const DistrictDropdown = () => {
         {districts.map(({ name, postalCode }) => (
           <Dropdown.Item
             as="li"
-            key={postalCode}
+            key={postalCode} // Use postalCode as a unique key
             onClick={() => setDistrict({ name, postalCode })}
             className="cursor-pointer hover-link"
             style={{ padding: "8px 12px" }}

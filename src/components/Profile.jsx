@@ -4,18 +4,20 @@ const Profile = ({ onDeletePlace }) => {
   const [savedPlaces, setSavedPlaces] = useState([]);
   const [messages, setMessages] = useState([]);
 
+  // Load data from localStorage when the page loads
   useEffect(() => {
-    const places = JSON.parse(localStorage.getItem("savedPlaces")) || [];
+    const places = JSON.parse(localStorage.getItem("savedPlaces")) || []; // Get saved places
     setSavedPlaces(places);
 
-    const storedMessages = JSON.parse(localStorage.getItem("messages")) || [];
+    const storedMessages = JSON.parse(localStorage.getItem("messages")) || []; // Get messages
     setMessages(storedMessages);
   }, []);
 
+  // Delete a saved place by ID
   const handleDelete = (id) => {
     const updatedPlaces = savedPlaces.filter((place) => place.id !== id);
     setSavedPlaces(updatedPlaces);
-    localStorage.setItem("savedPlaces", JSON.stringify(updatedPlaces));
+    localStorage.setItem("savedPlaces", JSON.stringify(updatedPlaces)); // Save changes to localStorage
     onDeletePlace(updatedPlaces.length);
   };
 

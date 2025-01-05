@@ -6,24 +6,28 @@ import Profile from "../src/components/Profile";
 import Header from "./components/Header";
 
 const App = () => {
-  const [savedItems, setSavedItems] = useState([]);
+  const [savedItems, setSavedItems] = useState([]); // List of saved properties
   const [messages, setMessages] = useState([]);
 
+  // Load saved items and messages from localStorage when the app loads
   useEffect(() => {
-    const storedSavedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    const storedSavedItems = JSON.parse(localStorage.getItem("savedItems")) || []; 
     const storedMessages = JSON.parse(localStorage.getItem("messages")) || [];
     setSavedItems(storedSavedItems);
     setMessages(storedMessages);
   }, []);
 
+  // Save the updated list of saved items to localStorage when it changes
   useEffect(() => {
     localStorage.setItem("savedItems", JSON.stringify(savedItems));
   }, [savedItems]);
 
+  // Save the updated list of messages to localStorage when it changes
   useEffect(() => {
     localStorage.setItem("messages", JSON.stringify(messages));
   }, [messages]);
 
+  // Handle saving a property
   const handleSavePlace = (property) => {
     if (!savedItems.some((item) => item.id === property.id)) {
       setSavedItems((prevSavedItems) => [...prevSavedItems, property]);

@@ -1,9 +1,11 @@
 import React, { useState, useEffect, createContext } from "react";
 import propertiesData from "../properties.json";
 
+// Create a context to share house info
 export const HouseContext = createContext();
 
 const HouseContextProvider = ({ children }) => {
+  // Set up states to store data and filters
   const [houses, setHouses] = useState(propertiesData.properties);
   const [district, setDistrict] = useState({ name: "District (any)", postalCode: "" });
   const [bedrooms, setBedrooms] = useState("Bedrooms (any)");
@@ -14,9 +16,11 @@ const HouseContextProvider = ({ children }) => {
   const [price, setPrice] = useState("Price range (any)");
   const [loading, setLoading] = useState(false);
 
+  // Get all unique districts from the data
   useEffect(() => {
     const uniqueDistricts = [];
     propertiesData.properties.forEach((house) => {
+      // Avoid duplicates in district list
       if (
         !uniqueDistricts.some(
           (district) =>
@@ -27,29 +31,34 @@ const HouseContextProvider = ({ children }) => {
         uniqueDistricts.push(house.district);
       }
     });
-    setDistricts([{ name: "District (any)", postalCode: "" }, ...uniqueDistricts]);
+    setDistricts([{ name: "District (any)", postalCode: "" }, ...uniqueDistricts]); // Add "any" option at the start
   }, []);
 
   useEffect(() => {
     const allBedrooms = propertiesData.properties.map((house) => house.bedrooms);
-    const uniqueBedrooms = ["Bedrooms (any)", ...new Set(allBedrooms)];
-    setBedroomOptions(uniqueBedrooms);
+    const uniqueBedrooms = ["Bedrooms (any)", ...new Set(allBedrooms)]; 
+    setBedroomOptions(uniqueBedrooms); // Set the list of bedroom options
   }, []);
 
   useEffect(() => {
     const allProperties = propertiesData.properties.map((house) => house.type);
     const uniqueProperties = ["Property type (any)", ...new Set(allProperties)];
-    setProperties(uniqueProperties);
+    setProperties(uniqueProperties); // Set the list of property types
   }, []);
 
+
+  // Handle the filtering when the user clicks "Search"
   const handleClick = () => {
     setLoading(true);
   
+    // Check if a filter is set to "any"
     const isDefault = (value) =>
       !value || value === "District (any)" || value === "Bedrooms (any)" || value === "Property type (any)" || value === "Price range (any)";
   
+    // Get the min and max price from the selected range
     const [minPrice, maxPrice] = price === "Price range (any)" ? [0, Infinity] : price.split(" - ").map((p) => parseInt(p));
   
+    // Filter the houses based on selected filters
     const filteredHouses = propertiesData.properties.filter((house) => {
       const housePrice = house.price;
   
@@ -61,6 +70,7 @@ const HouseContextProvider = ({ children }) => {
       );
     });
   
+    // If all filters are "any," show all houses
     if (
       isDefault(district.name) &&
       isDefault(property) &&

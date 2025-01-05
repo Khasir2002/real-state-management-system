@@ -11,11 +11,11 @@ const House = ({ house }) => {
     bathrooms,
     surface,
     price,
-    added,
+    addedDate,
   } = house;
 
   // Format the date
-  const formattedDate = `${added.day} ${added.month}, ${added.year}`;
+  const formattedDate = `${addedDate.day} ${addedDate.month}, ${addedDate.year}`;
 
   return (
     <div

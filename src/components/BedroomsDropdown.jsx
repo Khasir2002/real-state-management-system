@@ -4,7 +4,9 @@ import { Dropdown } from "react-bootstrap";
 import { HouseContext } from "./HouseContext";
 
 const BedroomsDropdown = () => {
+  // Get bedroom data and helper from context
   const { bedrooms, setBedrooms, bedroomOptions } = useContext(HouseContext);
+  // Check if dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
   return (

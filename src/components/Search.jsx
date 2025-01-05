@@ -7,7 +7,7 @@ import { RiSearch2Line } from 'react-icons/ri';
 import BedroomsDropdown from './BedroomsDropdown';
 
 const Search = () => {
-  const { handleClick } = useContext(HouseContext);
+  const { handleClick } = useContext(HouseContext); // Get the search function
 
   return (
     <div
@@ -31,7 +31,7 @@ const Search = () => {
 
       <div className="col-12 col-lg-2 mt-2 mt-lg-0">
         <button
-          onClick={() => handleClick()}
+          onClick={() => handleClick()} // Do the search when clicked
           className="btn btn-primary d-flex justify-content-center align-items-center w-100"
           style={{ height: '48px' }}
         >

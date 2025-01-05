@@ -9,16 +9,17 @@ import propertiesJson from "../properties.json";
 
 
 const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
-  const { id } = useParams();
+  const { id } = useParams(); // Get property ID from the URL
   const house = propertiesJson.properties.find(
-    (property) => property.id === parseInt(id)
+    (property) => property.id === parseInt(id) // Find the property by ID
   );
-  const apiKey = "AIzaSyC6OmcwJ5m-feSPpK3YVlFVd9vA954HAWk";
+  const apiKey = "AIzaSyC6OmcwJ5m-feSPpK3YVlFVd9vA954HAWk"; // Google Maps API key
 
-  const [currentImage, setCurrentImage] = useState(house.images[0]);
+  const [currentImage, setCurrentImage] = useState(house.images[0]); // Current image in the gallery
   const [notification, setNotification] = useState(false);
   const [message, setMessage] = useState("");
 
+  // Save property to localStorage
   const handleSavePlace = () => {
     const savedPlaces = JSON.parse(localStorage.getItem("savedPlaces")) || [];
     const isAlreadySaved = savedPlaces.some((place) => place.id === house.id);
@@ -44,7 +45,7 @@ const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
       message,
     });
 
-    setMessage("");
+    setMessage(""); // Clear the message input
   };
 
   const formattedDate = `${house.added.day} ${house.added.month}, ${house.added.year}`;
@@ -97,7 +98,7 @@ const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
                       cursor: "pointer",
                       objectFit: "cover",
                     }}
-                    onClick={() => setCurrentImage(img)}
+                    onClick={() => setCurrentImage(img)} // Change main image
                   />
                 ))}
               </div>

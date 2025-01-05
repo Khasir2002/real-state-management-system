@@ -4,7 +4,9 @@ import { Dropdown } from 'react-bootstrap';
 import { HouseContext } from './HouseContext';
 
 const PropertyDropdown = () => {
+  // Get property info and setter from context
   const { property, setProperty, properties } = useContext(HouseContext);
+  // Check if dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -46,7 +48,7 @@ const PropertyDropdown = () => {
           <Dropdown.Item
             as="li"
             key={index}
-            onClick={() => setProperty(property)}
+            onClick={() => setProperty(property)} // Set the selected property
             className="cursor-pointer hover-link"
             style={{ padding: '8px 12px' }}
           >

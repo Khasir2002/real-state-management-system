@@ -16,6 +16,7 @@ const HouseList = () => {
     );
   }
 
+  // If no houses are found, show a message
   if (houses.length < 1) {
     return (
       <h2 className="text-center text-secondary mt-5">No properties found.</h2>
@@ -27,9 +28,9 @@ const HouseList = () => {
       <div className="container">
         <div className="row g-4">
           {houses.map((house, index) => (
-            <div className="col-md-6 col-lg-4" key={index}>
+            <div className="col-md-6 col-lg-4" key={index}> {/* Each house gets its own column */}
               <Link to={`/property/${house.id}`} className="text-decoration-none">
-                <House house={house} />
+                <House house={house} /> {/* Show the house */}
               </Link>
             </div>
           ))}

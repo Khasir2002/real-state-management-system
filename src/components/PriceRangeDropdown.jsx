@@ -4,7 +4,9 @@ import { Dropdown } from 'react-bootstrap';
 import { HouseContext } from './HouseContext';
 
 const PriceRangeDropdown = () => {
+  // Get price info and setter from context
   const { price, setPrice } = useContext(HouseContext);
+  // Check if dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
   const prices = [
