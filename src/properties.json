@@ -33,7 +33,7 @@
       },
       "agent": {
         "image": "/images/agents/agent1.png",
-        "name": "Lahiru Perera",
+        "name": "Lahiruni Perera",
         "phone": "+94 77 123 4567"
       },
       "general": {
@@ -80,7 +80,7 @@
       },
       "agent": {
         "image": "/images/agents/agent2.png",
-        "name": "Kavindi Silva",
+        "name": "Kavinda Silva",
         "phone": "+94 77 987 6543"
       },
       "general": {
@@ -174,7 +174,7 @@
       },
       "agent": {
         "image": "/images/agents/agent4.png",
-        "name": "Samantha Perera",
+        "name": "Samanthi Perera",
         "phone": "+94 77 876 5432"
       },
       "general": {
@@ -268,7 +268,7 @@
       },
       "agent": {
         "image": "/images/agents/agent6.png",
-        "name": "Kamal Wickramasinghe",
+        "name": "Kamala Wickramasinghe",
         "phone": "+94 75 432 1212"
       },
       "general": {
@@ -315,7 +315,7 @@
       },
       "agent": {
         "image": "/images/agents/agent7.png",
-        "name": "Hiruni Fernando",
+        "name": "Hiruna Fernando",
         "phone": "+94 78 123 4567"
       },
       "general": {
