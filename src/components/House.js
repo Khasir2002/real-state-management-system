@@ -1,5 +1,5 @@
 import React from "react";
-import { BiBed, BiBath, BiArea } from "react-icons/bi";
+import { BiBed, BiBath, BiArea, BiCalendar } from "react-icons/bi";
 
 const House = ({ house }) => {
   const {
@@ -11,8 +11,11 @@ const House = ({ house }) => {
     bathrooms,
     surface,
     price,
+    added,
   } = house;
 
+  // Format the date
+  const formattedDate = `${added.day} ${added.month}, ${added.year}`;
 
   return (
     <div
@@ -49,6 +52,10 @@ const House = ({ house }) => {
       </div>
       <div className="d-flex justify-content-between align-items-center">
         <div className="fw-semibold text-primary">Rs.{price}</div>
+        <div className="d-flex align-items-center gap-1 text-muted small">
+          <BiCalendar className="fs-5" />
+          <div>{formattedDate}</div>
+        </div>
       </div>
     </div>
   );

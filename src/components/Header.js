@@ -7,14 +7,11 @@ const Header = ({ savedCount }) => {
   return (
     <header className="py-3 mb-4 border-bottom">
       <div className="container d-flex justify-content-between align-items-center">
-        {/* Logo */}
         <Link to="/">
           <img src={Logo} alt="logo" style={{ maxHeight: '40px' }} />
         </Link>
 
-        {/* User Section */}
         <div className="d-flex align-items-center gap-4">
-          {/* Profile Picture */}
           <img
             src={profilePic}
             alt="User"
@@ -22,7 +19,6 @@ const Header = ({ savedCount }) => {
             style={{ width: '40px', height: '40px', objectFit: 'cover' }}
           />
 
-          {/* Profile Link with Notification Badge */}
           <div className="position-relative">
             <Link
               to="/profile"
@@ -36,7 +32,6 @@ const Header = ({ savedCount }) => {
             >
               Profile
             </Link>
-            {/* Dynamic Notification Badge */}
             {savedCount > 0 && (
               <span
                 className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"

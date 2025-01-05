@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { BiBed, BiBath, BiArea } from "react-icons/bi";
+import { BiBed, BiBath, BiArea, BiCalendar } from "react-icons/bi";
 import { FaDog, FaTools, FaMoneyBillWave } from "react-icons/fa";
 import { MdSchool, MdRestaurant, MdDirectionsBus } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -8,17 +8,15 @@ import Footer from "../components/Footer";
 import propertiesJson from "../properties.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import Leaf from "leaflet";
 
-// Fix leaflet marker icons issue
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
+delete Leaf.Icon.Default.prototype._getIconUrl;
+Leaf.Icon.Default.mergeOptions({
   iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
   iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
   shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-// Hardcoded coordinates for Sri Lankan addresses
 const hardcodedCoordinates = {
   "No. 12, Temple Road, Nugegoda, Colombo": [6.865, 79.899],
   "No. 45, Marine Drive, Dehiwala, Colombo": [6.851, 79.865],
@@ -38,14 +36,20 @@ const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
   const [notification, setNotification] = useState(false);
   const [message, setMessage] = useState("");
 
-  const handleSavePlace = (property) => {
-    onSavePlace(property);
-    setNotification(true);
+  const handleSavePlace = () => {
+    const savedPlaces = JSON.parse(localStorage.getItem("savedPlaces")) || [];
+    const isAlreadySaved = savedPlaces.some((place) => place.id === house.id);
 
-    // Hide notification after 3 seconds
-    setTimeout(() => {
-      setNotification(false);
-    }, 3000);
+    if (!isAlreadySaved) {
+      savedPlaces.push(house);
+      localStorage.setItem("savedPlaces", JSON.stringify(savedPlaces));
+      onSavePlace(savedPlaces.length);
+      setNotification(true);
+
+      setTimeout(() => {
+        setNotification(false);
+      }, 3000);
+    }
   };
 
   const handleSendMessage = (e) => {
@@ -57,14 +61,15 @@ const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
       message,
     });
 
-    setMessage(""); // Clear the message input
+    setMessage("");
   };
+
+  const formattedDate = `${house.added.day} ${house.added.month}, ${house.added.year}`;
 
   return (
     <>
       <section className="container my-5">
         <div className="row">
-          {/* Notification */}
           {notification && (
             <div
               className="alert alert-success"
@@ -80,7 +85,6 @@ const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
             </div>
           )}
 
-          {/* Left Section: Main Image and Thumbnails */}
           <div className="col-lg-8">
             <div className="d-flex">
               <div className="w-75">
@@ -123,9 +127,12 @@ const PropertyDetails = ({ onSavePlace, onSendMessage }) => {
                 <AiOutlineHeart /> Save the Place
               </button>
             </div>
+            <div className="d-flex align-items-center gap-2 mb-3 text-muted">
+              <BiCalendar className="fs-5" />
+              <span>Added on: {formattedDate}</span>
+            </div>
             <p>{house.description}</p>
 
-            {/* Agent Section with Message Form */}
             <div className="d-flex flex-column align-items-start mt-4 p-3 bg-light rounded">
               <div className="d-flex align-items-center gap-3">
                 <img

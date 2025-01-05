@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PropertyDetails from "./pages/PropertyDetails";
@@ -9,13 +9,36 @@ const App = () => {
   const [savedItems, setSavedItems] = useState([]);
   const [messages, setMessages] = useState([]);
 
+  useEffect(() => {
+    const storedSavedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    const storedMessages = JSON.parse(localStorage.getItem("messages")) || [];
+    setSavedItems(storedSavedItems);
+    setMessages(storedMessages);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("savedItems", JSON.stringify(savedItems));
+  }, [savedItems]);
+
+  useEffect(() => {
+    localStorage.setItem("messages", JSON.stringify(messages));
+  }, [messages]);
+
   const handleSavePlace = (property) => {
-    setSavedItems((prevSavedItems) => [...prevSavedItems, property]);
+    if (!savedItems.some((item) => item.id === property.id)) {
+      setSavedItems((prevSavedItems) => [...prevSavedItems, property]);
+    }
   };
 
   const handleSendMessage = (message) => {
     setMessages((prevMessages) => [...prevMessages, message]);
   };
+
+  const handleDeletePlace = (id) => {
+    const updatedSavedItems = savedItems.filter((item) => item.id !== id);
+    setSavedItems(updatedSavedItems);
+  };
+  
 
   return (
     <div className="container bg-white">
@@ -33,7 +56,13 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={<Profile savedItems={savedItems} messages={messages} />}
+          element={
+            <Profile
+              savedItems={savedItems}
+              messages={messages}
+              onDeletePlace={handleDeletePlace}
+            />
+          }
         />
       </Routes>
     </div>

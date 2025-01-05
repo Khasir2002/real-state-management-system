@@ -8,7 +8,6 @@ const Banner = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start justify-content-center px-3 px-lg-0">
-            {/* Updated styling for the header */}
             <h1
               className="display-4 fw-bold mb-4"
               style={{
@@ -27,13 +26,12 @@ const Banner = () => {
               Your Dream House With Us...
             </h1>
 
-            {/* Updated styling for the paragraph */}
             <p
               className="lead mb-4"
               style={{
-                fontFamily: "'Poppins', sans-serif", // Ensure this font is loaded
+                fontFamily: "'Poppins', sans-serif",
                 fontSize: '1.125rem',
-                color: '#4A4A4A', // Subtle gray tone
+                color: '#4A4A4A',
               }}
             >
               Search for the best property that suits your needs.
